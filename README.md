@@ -15,12 +15,12 @@ The front page is organised by **grammar subject**. Every active subject has its
 Current subject boxes:
 
 - **Pronombres** — 23 activities
-- **Presente** — 4 activities
-- **Imperfecto** — 4 activities
-- **Pretérito** — 4 activities
-- **Pretérito perfecto** — 4 activities
+- **Presente** — 6 activities
+- **Imperfecto** — 6 activities
+- **Pretérito** — 6 activities
+- **Pretérito perfecto** — 6 activities
 
-There are currently **39 activities** in total.
+There are currently **47 activities** in total.
 
 The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**, **Identify**, **Find**, **Gap fill**, **Table** and **Test**.
 
@@ -32,6 +32,8 @@ The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**,
 - Present tense in context
 - Common present irregulars
 - Present tense: test
+- Present: match the regular forms
+- Present: match common irregulars
 
 ### Imperfecto
 
@@ -39,6 +41,8 @@ The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**,
 - Imperfect in context
 - Imperfect: choose the form
 - Imperfect: test
+- Imperfect: match the regular forms
+- Imperfect: match the irregulars
 
 ### Pretérito
 
@@ -48,6 +52,8 @@ This section uses **Pretérito** for the completed past / pretérito indefinido.
 - Pretérito: common irregulars
 - Ayer: completed actions
 - Pretérito: test
+- Pretérito: match the regular forms
+- Pretérito: match common irregulars
 
 ### Pretérito perfecto
 
@@ -55,6 +61,8 @@ This section uses **Pretérito** for the completed past / pretérito indefinido.
 - Past participles
 - Pretérito perfecto in context
 - Pretérito perfecto: test
+- Pretérito perfecto: match haber
+- Pretérito perfecto: match participles
 
 The new activities use Peninsular Spanish forms, including **vosotros**, and keep Pretérito and Pretérito perfecto as separate teaching areas.
 
