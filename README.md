@@ -10,23 +10,58 @@ The same folder can also be uploaded unchanged to a simple static host such as G
 
 ## Front-page structure
 
-The front page is organised by **grammar subject**. Every active subject has its own dropdown, grouped by activity type, with a short preview before the activity opens.
+The front page is organised by **grammar subject**. Every subject has its own dropdown, grouped by activity type, with a short preview before the activity opens.
 
 Current subject boxes:
 
-- **Pronombres** — 23 activities
-- **Presente** — 6 activities
-- **Imperfecto** — 6 activities
-- **Pretérito** — 6 activities
-- **Pretérito perfecto** — 6 activities
+- **Pronombres** — 31 activities
+- **Presente** — 8 activities
+- **Imperfecto** — 8 activities
+- **Pretérito** — 8 activities
+- **Pretérito perfecto** — 8 activities
 
-There are currently **47 activities** in total.
+There are currently **63 activities** in total.
 
 The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**, **Identify**, **Find**, **Gap fill**, **Table** and **Test**.
 
-## New tense activity banks
+## CEFR labels
 
-### Presente
+Every activity now has an **approximate target CEFR level**: **A1, A2, B1 or B2**.
+
+The level is shown:
+
+- inside each activity dropdown
+- in the activity preview on the front page
+- at the top of the activity itself
+
+These labels describe the approximate teaching level of the task. They are not intended to imply that completing one grammar activity demonstrates achievement of the full CEFR level.
+
+The current bank deliberately ranges from simple **A1** form work through **A2/B1** contextual grammar to a smaller number of more demanding **B2** tasks.
+
+## Pronombres
+
+The Pronombres section now covers both possessives and object pronouns.
+
+### Possessive pronouns and determiners
+
+The original bank includes matching, writing, identifying, finding, table, gap-fill and test activities covering forms such as **mi / mío**, **nuestro / el nuestro**, agreement and determiner-versus-pronoun use.
+
+### Direct and indirect object pronouns
+
+New activities include:
+
+- **Direct object pronouns: match** — `me, te, lo, la, nos, os, los, las`
+- **Indirect object pronouns: match** — `me, te, le, nos, os, les`
+- **Me gusta, me hablas, me ves** — identify direct versus indirect function
+- **Me gusta: indirect pronouns** — practise `me, te, le, nos, os, les` with *gustar*
+- **Direct object pronouns: replace it**
+- **Indirect object pronouns: replace it**
+- **Two object pronouns together** — including `se lo / se la / se los / se las`
+- **Object pronouns: placement challenge** — infinitives, gerunds and commands
+
+The final placement challenge is intentionally more advanced than the introductory object-pronoun activities.
+
+## Presente
 
 - Regular present: conjugation table
 - Present tense in context
@@ -34,8 +69,10 @@ The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**,
 - Present tense: test
 - Present: match the regular forms
 - Present: match common irregulars
+- **Present: find the regular verbs**
+- **Present: find the irregular verbs**
 
-### Imperfecto
+## Imperfecto
 
 - Imperfect: regular endings
 - Imperfect in context
@@ -43,8 +80,10 @@ The dropdowns use activity-type labels such as **Match**, **Choose**, **Write**,
 - Imperfect: test
 - Imperfect: match the regular forms
 - Imperfect: match the irregulars
+- **Imperfect: find past habits**
+- **Imperfect: find the background** — distinguishes imperfect background from completed events
 
-### Pretérito
+## Pretérito
 
 This section uses **Pretérito** for the completed past / pretérito indefinido.
 
@@ -54,8 +93,10 @@ This section uses **Pretérito** for the completed past / pretérito indefinido.
 - Pretérito: test
 - Pretérito: match the regular forms
 - Pretérito: match common irregulars
+- **Pretérito: find completed actions**
+- **Pretérito: find the events** — distinguishes completed events from imperfect background
 
-### Pretérito perfecto
+## Pretérito perfecto
 
 - Pretérito perfecto: haber
 - Past participles
@@ -63,15 +104,17 @@ This section uses **Pretérito** for the completed past / pretérito indefinido.
 - Pretérito perfecto: test
 - Pretérito perfecto: match haber
 - Pretérito perfecto: match participles
+- **Pretérito perfecto: find haber**
+- **Pretérito perfecto: find the participles**
 
-The new activities use Peninsular Spanish forms, including **vosotros**, and keep Pretérito and Pretérito perfecto as separate teaching areas.
+The verb activities use Peninsular Spanish forms, including **vosotros**, and keep Pretérito and Pretérito perfecto as separate teaching areas.
 
 ## Structure
 
 - `index.html` — subject-based front page and activity pickers
 - `activities/` — one HTML page per activity
-- `assets/css/theme.css` — Newbury College Spanish visual theme and 16:9 layout
-- `assets/js/activities.js` — subjects, activity catalogue, questions and answers
+- `assets/css/theme.css` — Newbury College Spanish visual theme, CEFR badges and 16:9 layout
+- `assets/js/activities.js` — subjects, CEFR mappings, activity catalogue, questions and answers
 - `assets/js/platform.js` — shared header, reusable subject home page and full-screen behaviour
 - `assets/js/activity-engine.js` — reusable activity types and scoring
 - `activities/activity-template.html` — starter page for future activities
@@ -90,7 +133,7 @@ Open `assets/js/activities.js` and add the activity to one of the existing subje
 - `preterito`
 - `preterito-perfecto`
 
-You can also add a new subject to the `subjects` array. The front page now builds active subject dropdowns automatically.
+You can also add a new subject to the `subjects` array. The front page builds active subject dropdowns automatically.
 
 ### 2. Add the activity to the catalogue
 
@@ -99,14 +142,15 @@ Add a catalogue entry with:
 - a unique `id`
 - the HTML filename
 - the grammar `subject`
-- a `typeLabel`, such as `Write`, `Choose` or `Test`
+- a `typeLabel`, such as `Write`, `Choose`, `Find` or `Test`
+- a `cefr` value: `A1`, `A2`, `B1` or `B2`
 - a short title and description
 
-The `typeLabel` groups activities inside each subject dropdown.
+The `typeLabel` groups activities inside each subject dropdown. The `cefr` value creates the level label automatically.
 
 ### 3. Add the activity data
 
-Add an activity object with the same ID to `activities`.
+Add an activity object with the same ID to `activities`, including the same `cefr` level.
 
 The reusable activity types currently include:
 

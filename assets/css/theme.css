@@ -1023,3 +1023,39 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .subject-card:nth-child(5) { grid-column: 4 / span 2; }
 }
 .matrix-layout--single { grid-template-columns: minmax(0, 1fr); }
+
+/* CEFR labels */
+.activity-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cefr-badge {
+  display: inline-flex;
+  min-height: 27px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  border: 2px solid var(--nc-border);
+  background: #fff;
+  color: var(--nc-ink);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.cefr-badge[data-cefr="A1"] { border-color: #2e8540; background: #edf8f1; }
+.cefr-badge[data-cefr="A2"] { border-color: #1d70b8; background: #eef6fc; }
+.cefr-badge[data-cefr="B1"] { border-color: #b76b00; background: #fff6e8; }
+.cefr-badge[data-cefr="B2"] { border-color: #6f42c1; background: #f5f0ff; }
+
+@media (min-width: 901px) {
+  .activity-preview .cefr-badge,
+  .activity-preview .activity-type-badge {
+    min-height: 22px;
+    padding: 3px 7px;
+    font-size: 9px;
+  }
+}

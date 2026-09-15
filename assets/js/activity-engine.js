@@ -44,6 +44,7 @@
       <div class="activity-layout">
         <div class="activity-meta">
           <span class="activity-kicker">${esc(activity.kicker)}</span>
+          <span class="cefr-badge" data-cefr="${esc(activity.cefr || '')}">CEFR ${esc(activity.cefr || '—')}</span>
           <span class="activity-instruction">${esc(activity.instruction)}</span>
         </div>
         <section class="activity-stage" id="activity-stage" aria-live="polite"></section>
@@ -175,12 +176,12 @@
     stage.innerHTML = `
       <div class="match-layout">
         <section class="match-bank">
-          <h3>Subjects</h3>
+          <h3>${esc(activity.bankLabel || 'Cards')}</h3>
           <div class="match-chips" id="match-bank">
             ${unassigned.map(({item,index}) => `<button class="match-chip ${state.selectedMatch === index ? 'selected' : ''}" type="button" draggable="true" data-index="${index}">${esc(item[0])}</button>`).join('') || '<p>All cards have been placed.</p>'}
           </div>
         </section>
-        <section class="match-targets" aria-label="Possessive families">
+        <section class="match-targets" aria-label="${esc(activity.targetLabel || 'Matching targets')}">
           ${activity.targets.map(target => {
             const assigned = activity.items.map((item,index) => ({item,index})).filter(entry => state.matchAssignments[entry.index] === target.id);
             return `<div class="match-target" data-target="${esc(target.id)}" tabindex="0">
@@ -473,7 +474,7 @@
         <div class="identify-row">
           <span class="select-number">${index + 1}</span>
           <div class="identify-sentence">${highlightTarget(item.sentence, item.target)}</div>
-          <select class="answer-select identify-select" data-answer="${esc(item.answer)}" aria-label="Determiner or pronoun">
+          <select class="answer-select identify-select" data-answer="${esc(item.answer)}" aria-label="Choose the classification">
             <option value="">Choose…</option>
             ${item.options.map(option => `<option value="${esc(option)}">${esc(option)}</option>`).join('')}
           </select>

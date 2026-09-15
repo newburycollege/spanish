@@ -71,7 +71,7 @@
       return types.map(type => {
         const options = items
           .filter(item => item.typeLabel === type)
-          .map(item => `<option value="${esc(item.id)}">${esc(item.title)}</option>`)
+          .map(item => `<option value="${esc(item.id)}">${esc(item.cefr || '—')} · ${esc(item.title)}</option>`)
           .join('');
         return `<optgroup label="${esc(type)}">${options}</optgroup>`;
       }).join('');
@@ -124,7 +124,7 @@
         <section class="home-intro">
           <div>
             <h1>Spanish classroom activities</h1>
-            <p>Choose a grammar subject, then select an activity by format.</p>
+            <p>Choose a grammar subject, then select an activity by format. CEFR labels show the approximate target teaching level.</p>
           </div>
           <div class="home-badge">${totalActivities} activities · ${activeSubjects} subjects</div>
         </section>
@@ -153,12 +153,12 @@
         preview.className = 'activity-preview';
         preview.innerHTML = `
           <div>
-            <span class="activity-type-badge">${esc(item.typeLabel)}</span>
+            <div class="activity-badge-row"><span class="activity-type-badge">${esc(item.typeLabel)}</span><span class="cefr-badge" data-cefr="${esc(item.cefr || '')}">CEFR ${esc(item.cefr || '—')}</span></div>
             <strong>${esc(item.title)}</strong>
             <p>${esc(item.description)}</p>
           </div>
           <a class="open-activity-button" href="activities/${esc(item.file)}">Open</a>`;
-        window.NCSpanish.setStatus(`${item.typeLabel} · ${item.title}`);
+        window.NCSpanish.setStatus(`CEFR ${item.cefr || '—'} · ${item.typeLabel} · ${item.title}`);
       });
     });
 
